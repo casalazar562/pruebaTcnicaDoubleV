@@ -1,0 +1,14 @@
+<app-add-list
+  [usuarios]="usuarios"
+  (create)="createUsuarios()"></app-add-list>
+
+<app-custom-modal
+  title="Gestión Usuario"
+  [(show)]="showModalUsuario">
+    <app-add-form
+      *ngIf="showModalUsuario"
+      [usuario]="usuario"
+      (store)="guardarUsuarios($event)"
+      (cancel)="reset()">
+    </app-add-form>
+</app-custom-modal>

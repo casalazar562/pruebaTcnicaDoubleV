@@ -1,0 +1,153 @@
+<div class="modal-body">
+  <div class="card-header">
+    <strong>Registrar Usuario</strong>
+  </div>
+  <div class="card-body">
+    <form class="usuarioFormulario" [formGroup]="formUsuario" class="was-validated" novalidate>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="tipoId">Tipo Identificación:</label>
+        <div class="col-md-7 mb-2">
+          <select class="form-control is-valid" formControlName='tipoIdentificacion'
+            required>
+            <option value="TI">Terjeta de identidad</option>
+            <option ngValue="CC">Cedula de ciudadania</option>
+            objTipoId
+
+          </select>
+          <div class="valid-feedback" *ngIf="!idtipoIdentificacionField?.hasError('required')">
+            Valor valido
+          </div>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="identificacion">Identificación:</label>
+        <div class="col-md-7 mb-2">
+          <input type="number" onkeyup="javascript:this.value=this.value;" placeholder="Ingrese su identificación"
+            class="form-control is-valid" formControlName='identificacion'
+            required id="identificacion" />
+          <div class=" valid-feedback" *ngIf="!identificacionField?.hasError('required')">
+            Valor valido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingrese un valor valido para el nombre del menú
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="names">Nombres:</label>
+        <div class="col-md-7 mb-2">
+          <input
+            type="text"
+            onkeyup="javascript:this.value=this.value.toUpperCase();"
+            placeholder="Ingrese sus nombres"
+            class="form-control is-valid"
+            formControlName='names'
+            required>
+          <div class="valid-feedback" *ngIf="!namesField?.hasError('required')">
+            Valor válido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingresé un valor válido para los nombres
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="lastNames">Apellidos:</label>
+        <div class="col-md-7 mb-2">
+          <input
+            type="text"
+            onkeyup="javascript:this.value=this.value.toUpperCase();"
+            placeholder="Ingrese sus apellidos"
+            class="form-control is-valid"
+            formControlName='lastNames'
+            required>
+          <div class="valid-feedback" *ngIf="!lastNamesField?.hasError('required')">
+            Valor válido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingresé un valor válido para sus apellidos
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="email">Email:</label>
+        <div class="col-md-7 mb-2">
+          <input type="email" onkeyup="javascript:this.value=this.value;" placeholder="Ingrese su Email"
+            class="form-control is-valid" formControlName="email"
+            required>
+          <div class="valid-feedback" *ngIf="!emailField?.hasError('required')">
+            Valor valido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingrese un valor valido para el nombre del menú
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="username">Nombre de usuario:</label>
+        <div class="col-md-7 mb-2">
+          <input
+            type="username"
+            placeholder="Ingrese su nombre de usuario"
+            class="form-control is-valid"
+            formControlName='username'
+            required>
+          <div class="valid-feedback" *ngIf="!usernameField?.hasError('required')">
+            Valor válido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingresé un valor válido para el nombre de usuario
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="contrasena">Contraseña:</label>
+        <div class="col-md-7 mb-2">
+          <input
+            type="password"
+            placeholder="Ingrese su contraseña"
+            class="form-control is-valid"
+            formControlName='contrasena' id="contrasena"
+            required>
+          <div class="valid-feedback" *ngIf="!contrasenaField?.hasError('required')">
+            Valor válido
+          </div>
+        </div>
+        <div class="invalid-feedback">
+          por favor ingresé un valor válido para la contraseña
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-md-4 col-form-label" for="confirmContrasena">Confirmar contraseña:</label>
+        <div class="col-md-7 mb-2">
+          <input
+            id="confirmContrasena"
+            type="password"
+            placeholder="Ingrese su contraseña"
+            class="form-control is-valid"
+            formControlName='confirmContrasena'
+            required>
+
+        </div>
+
+      </div>
+
+    </form>
+    <div class="card-footer">
+      <button
+        type="submit"
+        class="btn btn-sm btn-primary m-2"
+        (click)="guardarUsuario()"
+        [disabled]="formUsuario.invalid">
+        <i class="fa fa-dot-circle-o"></i> Aceptar
+      </button>
+      <button
+        type="reset"
+        class="btn btn-sm btn-danger"
+        (click)="closeModal()">
+        <i class="fa fa-ban"></i>
+        Cancelar
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+/* .main-header{
+    left: 0;
+    right: 0;
+    top: 0; */
+    /* z-index: 1037;
+   width: 100%;*/
+  
+  /* } */
+  
+  /* .navbar-light {
+  background-image: url('../../../assets/img/fondo-abstracto-azul_1393-339.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+  }
+  
+  .right {
+  margin-left: 1%;
+  }
+  
+  
+  .text-f {
+  color: #f0d800;
+  }
+  
+  .color{
+    padding-right: 1em;
+    margin-top: 0.5em;
+  }
+  .example-spacer{
+    flex: 1 1 auto;
+  } */
+
+  .navbar{
+    background-color: #3156a7;
+
+  }
+  .nav-link{
+    color: white;
+  }
