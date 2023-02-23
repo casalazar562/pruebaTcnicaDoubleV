@@ -20,22 +20,10 @@ export class AuthService {
     if (this._usuario != null) {
       return this._usuario;
     } else if (this._usuario == null && sessionStorage.getItem('usuario') != null) {
-      //this._usuario = JSON.parse(sessionStorage.getItem('usuario')) as Usuario;
       return this._usuario;
     }
     return new UsuarioModel();
   }
-
- /*
-  public get token(): string {
-    if (this._token != null) {
-      return this._token;
-    } else if (this._token == null && sessionStorage.getItem('token') != null) {
-      this._token = sessionStorage.getItem('token');
-      return this._token;
-    }
-    return null;
-  }*/
 
   login(usuario: any): Observable<any> {
     
@@ -58,10 +46,6 @@ export class AuthService {
     let payload=this.obtenerDatosToken(accesToken);
     this._usuario=new UsuarioModel();
     this._usuario.username=payload.user_name;
-    // this._usuario.areaId=payload.areaId;
-    // this._usuario.roles=payload.authorities;
-    // this._usuario.firstname=payload.firstname;
-    // this._usuario.surname=payload.surname;
     sessionStorage.setItem('usuario',JSON.stringify(this._usuario))
   }
 

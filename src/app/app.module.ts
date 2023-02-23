@@ -15,13 +15,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import { InicioComponent } from './Components/inicio/inicio.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ContentComponent } from './Components/content/content.component';
 import { AddFormComponent } from './Components/add-user/components/add-form/add-form.component';
 import { AddListComponent } from './Components/add-user/components/add-list/add-list.component';
 import { AddUserComponent } from './Components/add-user/page/add-user.component';
 import { CustomModalComponent } from './Components/custom-modal/custom-modal.component';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AuthInterceptorService } from './services/auth-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,13 @@ import { ModalModule } from 'ngx-bootstrap/modal';
   exports: [
     CustomModalComponent
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

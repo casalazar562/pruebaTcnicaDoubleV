@@ -17,7 +17,7 @@ export class AddUserComponent implements OnInit {
   
 
   constructor(
-    // private _uiNotificationService: UINotificationService,
+    
     private _usuarioService: UserService,
     
   ) {}
@@ -32,7 +32,7 @@ export class AddUserComponent implements OnInit {
         this.usuarios = usuarios;
       },
       (error) => {
-        // this._uiNotificationService.error("Error de conexión");
+        
       }
     );
   }

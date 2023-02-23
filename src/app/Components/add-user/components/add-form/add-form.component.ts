@@ -35,27 +35,12 @@ export class AddFormComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.setProceso();
+  
   }
 
   
 
-  setProceso() {
-    if (this.usuario) {
-      this.formUsuario.patchValue({
-        // email: this.usuario.user.email,
-        // contrasena: this.usuario.contrasena,
-        // nombre1: this.usuario.user.persona.nombre1,
-        // nombre2: this.usuario.user.persona.nombre2,
-        // apellido1: this.usuario.user.persona.apellido1,
-        // apellido2: this.usuario.user.persona.apellido2,
-        // fechaNac: this.usuario.user.persona.fechaNac,
-        // celular: parseInt(this.usuario.user.persona.celular),
-        // email: this.usuario.user.persona.email
-      });
-      // this.formUsuario.controls["contrasena"].disable();
-    }
-  }
+
 
   private buildForm() {
     this.formUsuario = this.formBuilder.group({
